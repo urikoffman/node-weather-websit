@@ -7,6 +7,8 @@ const app = express()
 const publicDirPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
+
+const port = process.env.PORT || 3000
     // const publicDirPathHelp = path.join(__dirname, '../public/help.html')
     // const publicDirPathAbput = path.join(__dirname, '../public.about.html')
 
@@ -92,6 +94,6 @@ app.get('*', (req, res) => {
         errorMsg: 'Page Not Found!'
     })
 })
-app.listen(3000, () => {
-    console.log('server is up on port 3000!');
+app.listen(port, () => {
+    console.log(`server is up on port ${port}`);
 })
